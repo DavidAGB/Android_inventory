@@ -117,6 +117,14 @@ class SettingsDrawer(private val a: MainActivity) {
             body.add(a.label("Se aplicará cuando salgas de la app. Si tenías el icono en la pantalla de inicio, puede que tengas que volver a ponerlo desde el cajón de apps.", 12.5f, R.color.muted), top = 8, start = 2)
         }
 
+        // Widget
+        if (Widget.canPin(a)) {
+            body.add(a.caps("Pantalla de inicio"), top = 22, bottom = 8, start = 2)
+            val home = a.card(4)
+            body.add(home)
+            home.add(action("Añadir widget", "Por reponer y por vencer, sin abrir la app") { Widget.pin(a) })
+        }
+
         // Datos
         body.add(a.caps("Datos"), top = 22, bottom = 8, start = 2)
         val data = a.card(4)

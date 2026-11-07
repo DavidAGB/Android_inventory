@@ -46,6 +46,7 @@ object Alerts {
     }
 
     fun check(ctx: Context) {
+        Widget.update(ctx) // los días para vencer cambian aunque nadie abra la app
         val inv = Inventory(ctx)
         val low = inv.products().filter { it.low }
         val expiring = inv.expiring(7)

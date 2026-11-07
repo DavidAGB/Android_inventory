@@ -115,7 +115,11 @@ class App : android.app.Application() {
 
             override fun onActivityStopped(activity: Activity) {
                 started--
-                if (started == 0 && !activity.isChangingConfigurations && !externalFlow) AppIcon.applyPending(this@App)
+                if (started == 0 && !activity.isChangingConfigurations) {
+                    // Al volver a la pantalla de inicio el widget ya muestra los cambios.
+                    Widget.update(this@App)
+                    if (!externalFlow) AppIcon.applyPending(this@App)
+                }
             }
 
             override fun onActivityCreated(activity: Activity, savedInstanceState: android.os.Bundle?) {}

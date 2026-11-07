@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Mi Inventario</string>
+    <string name="widget_label">Por reponer</string>
+    <string name="widget_desc">Lo que hay que reponer y lo que está por vencer</string>
 </resources>
